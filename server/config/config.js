@@ -17,10 +17,11 @@ let urlDB;
 if (process.env.NODE_ENV === 'dev') {
     urlDB = 'mongodb://localhost:27017/cafe'
 } else {
-    urlDB = 'mongodb+srv://hmartinez:*haml1404*@cluster0-1aohv.mongodb.net/cafe'
+
+
+    urlDB = process.env.MONGOURI;
 }
 
-//Forzamos el uso de la bd remota para probar
-//urlDB = 'mongodb+srv://hmartinez:*haml1404*@cluster0-1aohv.mongodb.net/cafe'
+
 
 process.env.URLDB = urlDB;
